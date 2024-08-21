@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Header from "./components/Header";
 import { menuItems } from "./data/data";
 import MenuItem from "./components/MenuItem";
@@ -7,9 +7,22 @@ import OrderContent from "./components/OrderContent";
 import OrderTotal from "./components/OrderTotal";
 import TipPercentage from "./components/TipPercentage";
 
+
+
 const App = () => {
-  const [data] = useState(menuItems);
+  const [data, setData] = useState(menuItems);
   const { addItem, order, removeItem, tip, setTip, placeOrder } = useOrder();
+
+  const getData = async() => {
+    const response = await fetch('./data/data');
+    const data = await response.json();
+    console.log(data);
+    setData(data);
+  };
+
+  useEffect(() => {
+    getData();
+  }, []);
 
   return (
     <div>
