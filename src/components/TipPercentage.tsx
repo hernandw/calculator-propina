@@ -2,6 +2,7 @@ import { Dispatch, SetStateAction } from "react";
 
 type PercetageProps = {
   setTip: Dispatch<SetStateAction<number>>;
+  tip: number;
 };
 
 const tipOptions = [
@@ -22,7 +23,7 @@ const tipOptions = [
   },
 ];
 
-const TipPercentage = ({ setTip }: PercetageProps) => {
+const TipPercentage = ({ setTip, tip }: PercetageProps) => {
   return (
     <div>
       <form>
@@ -35,6 +36,7 @@ const TipPercentage = ({ setTip }: PercetageProps) => {
               name="tip"
               value={option.value}
               onChange={(e) => setTip(+e.target.value)}
+              checked={option.value === tip}
             />
             <label htmlFor={option.id}>{option.label}</label>
           </div>

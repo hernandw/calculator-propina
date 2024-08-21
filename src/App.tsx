@@ -9,7 +9,7 @@ import TipPercentage from "./components/TipPercentage";
 
 const App = () => {
   const [data] = useState(menuItems);
-  const { addItem, order, removeItem, tip, setTip } = useOrder();
+  const { addItem, order, removeItem, tip, setTip, placeOrder } = useOrder();
 
   return (
     <div>
@@ -39,8 +39,8 @@ const App = () => {
               ))
             )}
 
-            <TipPercentage setTip={setTip} />
-            <OrderTotal order={order} tip={tip} />
+            <TipPercentage setTip={setTip} tip={tip} />
+            <OrderTotal order={order} tip={tip} placeOrder={placeOrder} />
           </div>
         </div>
       </main>

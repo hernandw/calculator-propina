@@ -31,6 +31,11 @@ export const useOrder = () => {
     setOrder(newOrder);
   };
 
+  const placeOrder = () => {
+    setOrder([])
+    setTotal(0)
+    setTip(0)
+  }
   return {
     addItem,
     order,
@@ -38,6 +43,7 @@ export const useOrder = () => {
     total,
     setTotal,
     tip,
-    setTip
+    setTip,
+    placeOrder
   };
 };

@@ -5,27 +5,31 @@ import { OrderItem } from "../types";
 type TotalProps = {
   order: OrderItem[];
   tip: number;
+  placeOrder: () => void;
 };
 
-const OrderTotal = ({ order, tip }: TotalProps) => {
-  const totalAmount = order.reduce(
+const OrderTotal = ({ order, tip, placeOrder }: TotalProps) => {
+  const subTotalAmount = order.reduce(
     (acc, item) => acc + item.price * item.quantity,
     0
   );
+const propina = subTotalAmount * tip
+  const totalAmount = subTotalAmount + propina;
   return (
-    <div className="space-y-3">
+    <div className="space-y-5">
       <h2 className="text-2xl font-black">Totales y Propinas</h2>
       <p>
-        Subtotal a pagar: <span>{formatCurrency(totalAmount)}</span>
+        Subtotal a pagar: <span className="font-bold">{formatCurrency(subTotalAmount)}</span>
       </p>
 
       <p>
-        Propina: <span>{formatCurrency(tip * totalAmount)}</span>
+        Propina: <span className="font-bold">{formatCurrency(propina)}</span>
       </p>
 
       <p>
-        Total: <span>{formatCurrency(0)}</span>
+        Total: <span className="font-bold">{formatCurrency(totalAmount)}</span>
       </p>
+      <button className="bg-green-800 text-white p-3   disabled:opacity-5 rounded w-full font-bold uppercase" disabled={totalAmount ===0} onClick={placeOrder}>Guardar Orden</button>
     </div>
   );
 };
