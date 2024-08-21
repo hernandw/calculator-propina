@@ -5,10 +5,11 @@ import { menuItems } from "./data/data";
 import MenuItem from "./components/MenuItem";
 import { useOrder } from "./components/hooks/useOrder";
 import OrderContent from "./components/OrderContent";
+import OrderTotal from "./components/OrderTotal";
 
 const App = () => {
   const [data, setData] = useState(menuItems);
-  const { addItem, order } = useOrder();
+  const { addItem, order, removeItem, total, setTotal } = useOrder();
 
   return (
     <div>
@@ -29,8 +30,10 @@ const App = () => {
             {order.length === 0 ? (
               <p className="text-2xl text-center">No hay consumos</p>
             ) : (
-              order.map((item) => <OrderContent key={item.id} item={item} />)
+              order.map((item) => <OrderContent key={item.id} item={item} removeItem={removeItem}  />)
             )}
+
+            <OrderTotal order={order} />
           </div>
         </div>
       </main>

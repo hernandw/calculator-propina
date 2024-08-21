@@ -5,28 +5,13 @@ export const useOrder = () => {
   const [order, setOrder] = useState<OrderItem[]>(
     JSON.parse(localStorage.getItem("order") || "[]")
   );
+  const [total, setTotal] = useState(0)
 
   useEffect(() => {
     localStorage.setItem("order", JSON.stringify(order));
-  })
+  });
   const addItem = (item: MenuItem) => {
-    /* const newItem = { ...item, quantity: 1 };
-    if(!order.some(orderItem => orderItem.id === item.id)) {
-      setOrder([...order, newItem]);
-    }
-
-    if(order.some(orderItem => orderItem.id === item.id)) {
-      const newOrder = order.map(orderItem => {
-        if(orderItem.id === item.id) {
-          return { ...orderItem, quantity: orderItem.quantity + 1 };
-        }
-        return orderItem;
-      });
-      setOrder(newOrder);
-    } 
-  };
-  */
- const itemExists = order.find((orderItem) => orderItem.id === item.id);
+    const itemExists = order.find((orderItem) => orderItem.id === item.id);
     if (itemExists) {
       const newOrder = order.map((orderItem) => {
         if (orderItem.id === item.id) {
@@ -40,8 +25,16 @@ export const useOrder = () => {
     }
   };
 
+  const removeItem = (id: MenuItem["id"]) => {
+    const newOrder = order.filter((orderItem) => orderItem.id !== id);
+    setOrder(newOrder);
+  };
+
   return {
     addItem,
-    order
+    order,
+    removeItem,
+    total,
+    setTotal
   };
 };
