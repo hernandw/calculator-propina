@@ -1,48 +1,80 @@
-# Calculadora de Propinas
+# Titulo del Proyecto
 
-Este proyecto tiene como objetivo calcular el monto de un pedido, de acuerdo a las opciones seleccionadas por el cliente y calcular subtotal y monto con propinas. 
+Calculadora de Consumos y Propinas. Puedes escoger los productos y luego la cantidad de propina que deseas agregar
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Descripción del proyecto
 
-## Expanding the ESLint configuration
+Calculadora de Consumos y Propinas. Puedes escoger los productos y luego la cantidad de propina que deseas agregar
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Capturas de Pantalla del Proyecto
 
-- Configure the top-level `parserOptions` property like this:
+Incluir capturas de pantalla o imágenes que muestren el proyecto en funcionamiento.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+![Home](images/calculadora.png)
+Vista inicio de la aplicación.
+
+![Consumos](images/calculadora2.png)
+Vista inicio de la aplicación.
+
+## Prerrequisitos o Dependencias
+
+Lista de software y herramientas, incluyendo versiones, que necesitas para instalar y ejecutar este proyecto:
+
+- React
+- Typescript
+- Talwindcss
+
+## Instalación del Proyecto
+
+1. Clonar el proyecto
+
+```bash
+# git clone git@github.com:hernandw/calculator-propina.git
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+Instalar Dependencias
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+```bash
+# npm i
 ```
+
+## Instrucciones para Ejecutar el Proyecto
+
+Instrucciones para ejecutar el proyecto una vez instalado.
+
+```bash
+# npm run dev
+```
+
+## Instrucciones para Cargar la Base de Datos o Migrar los Modelos
+
+Instrucciones necesario para cargar la base de datos o migrar los modelos de datos.
+
+```bash
+#
+```
+
+## Instrucciones para Cargar los Datos Semilla a la Base de Datos
+
+Comandos necesario para cargar los datos semilla a la base de datos.
+
+```bash
+# paso 1
+```
+
+Y así sucesivamente...
+
+```bash
+# paso 2
+```
+
+
+
+## Licencia
+
+Este proyecto está bajo la Licencia MIT - ve el archivo [license.md](LICENSE) para detalles
+
+---
+
+
+⌨️ con ❤️ por [Williams Hernández](https://github.com/hernandw) 😊
