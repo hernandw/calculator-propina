@@ -1,15 +1,15 @@
 import { useState } from "react";
 import Header from "./components/Header";
-
 import { menuItems } from "./data/data";
 import MenuItem from "./components/MenuItem";
 import { useOrder } from "./components/hooks/useOrder";
 import OrderContent from "./components/OrderContent";
 import OrderTotal from "./components/OrderTotal";
+import TipPercentage from "./components/TipPercentage";
 
 const App = () => {
-  const [data, setData] = useState(menuItems);
-  const { addItem, order, removeItem, total, setTotal } = useOrder();
+  const [data] = useState(menuItems);
+  const { addItem, order, removeItem, tip, setTip } = useOrder();
 
   return (
     <div>
@@ -30,10 +30,17 @@ const App = () => {
             {order.length === 0 ? (
               <p className="text-2xl text-center">No hay consumos</p>
             ) : (
-              order.map((item) => <OrderContent key={item.id} item={item} removeItem={removeItem}  />)
+              order.map((item) => (
+                <OrderContent
+                  key={item.id}
+                  item={item}
+                  removeItem={removeItem}
+                />
+              ))
             )}
 
-            <OrderTotal order={order} />
+            <TipPercentage setTip={setTip} />
+            <OrderTotal order={order} tip={tip} />
           </div>
         </div>
       </main>

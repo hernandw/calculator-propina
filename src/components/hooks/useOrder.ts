@@ -5,7 +5,8 @@ export const useOrder = () => {
   const [order, setOrder] = useState<OrderItem[]>(
     JSON.parse(localStorage.getItem("order") || "[]")
   );
-  const [total, setTotal] = useState(0)
+  const [total, setTotal] = useState(0);
+  const [tip, setTip] = useState(0)
 
   useEffect(() => {
     localStorage.setItem("order", JSON.stringify(order));
@@ -35,6 +36,8 @@ export const useOrder = () => {
     order,
     removeItem,
     total,
-    setTotal
+    setTotal,
+    tip,
+    setTip
   };
 };
