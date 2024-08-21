@@ -16,7 +16,7 @@ const App = () => {
       <Header />
       <main className="max-w-7xl mx-auto py-20 grid md:grid-cols-2">
         <div className="p-5">
-          <h2 className="text-4xl font-black">Menu</h2>
+          <h2 className="text-4xl font-black text-center">Menu</h2>
 
           <div className="space-y-3 mt-10">
             {data.map((item) => (
@@ -24,23 +24,27 @@ const App = () => {
             ))}
           </div>
         </div>
-        <div>
-          <div className="space-y-10 border border-dashed border-slate-300 p-5">
-            <h2 className="text-4xl font-black">Consumo</h2>
+        <div className="p-5">
+          <div className="space-y-10">
+            <h2 className="text-4xl font-black text-center">Consumo</h2>
             {order.length === 0 ? (
               <p className="text-2xl text-center">No hay consumos</p>
             ) : (
-              order.map((item) => (
+              <div className="border border-dashed border-slate-300 p-5">
+              {order.map((item) => (
                 <OrderContent
                   key={item.id}
                   item={item}
                   removeItem={removeItem}
                 />
-              ))
+              ))}
+              <TipPercentage setTip={setTip} tip={tip} />
+              <OrderTotal order={order} tip={tip} placeOrder={placeOrder} />
+              </div>
             )}
 
-            <TipPercentage setTip={setTip} tip={tip} />
-            <OrderTotal order={order} tip={tip} placeOrder={placeOrder} />
+            
+            
           </div>
         </div>
       </main>

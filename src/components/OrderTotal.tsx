@@ -29,7 +29,7 @@ const propina = subTotalAmount * tip
       <p>
         Total: <span className="font-bold">{formatCurrency(totalAmount)}</span>
       </p>
-      <button className="bg-green-800 text-white p-3   disabled:opacity-5 rounded w-full font-bold uppercase" disabled={totalAmount ===0} onClick={placeOrder}>Guardar Orden</button>
+      <button className="bg-green-800 text-white p-3 rounded w-full font-bold uppercase" onClick={placeOrder}>Guardar Orden</button>
     </div>
   );
 };
