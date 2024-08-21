@@ -10,10 +10,10 @@ Calculadora de Consumos y Propinas. Puedes escoger los productos y luego la cant
 
 Incluir capturas de pantalla o imágenes que muestren el proyecto en funcionamiento.
 
-![Home](images/calculadora.png)
+![Home](public/images/calculadora.png)
 Vista inicio de la aplicación.
 
-![Consumos](images/calculadora2.png)
+![Consumos](public/images/calculadora2.png)
 Vista inicio de la aplicación.
 
 ## Prerrequisitos o Dependencias
